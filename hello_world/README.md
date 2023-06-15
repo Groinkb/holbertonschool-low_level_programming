@@ -1,0 +1,1 @@
+This README is talking about the role of the script.
