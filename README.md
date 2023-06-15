@@ -1,1 +1,1 @@
-# holbertonschool-low_level_programming
+This README.md talk about the script in C.
