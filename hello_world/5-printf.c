@@ -1,11 +1,14 @@
 #include <stdio.h>
 
-int main(void) {
+/**
+ * main - Prints "with proper grammar, but the outcome is
+ *                a piece of art," followed by a new line.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+  printf("with proper grammar, but the outcome is a piece of art,\n");
 
-  printf("hello, world\n") ;
-
-  return 0 ;
-
+  return (0);
 }
-/*Include c'est pour *The C programming language provides many standard library functions for file input and output. These functions make up the bulk of the C standard library header <stdio.h>.*/
-
