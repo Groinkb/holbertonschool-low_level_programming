@@ -6,7 +6,7 @@
  * Description: Print alphabet lowercase
  * Return: Zero value
  */
-int main (void)
+int main(void)
 {
 char c;
 for (c = 'a'; c <= 'z'; c++)
