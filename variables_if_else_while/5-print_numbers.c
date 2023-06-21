@@ -1,15 +1,17 @@
 #include <stdio.h>
 /**
- * main- Entry point
- * @void: Null value
- * * Description: Print numbers from 0 to 9
- * Return: Zero value
- */
+ * main - Prints all single digit numbers of base 10 starting from 0
+ *
+ * Return: Always (Succes)
+*/
 int main(void)
 {
-int n;
-for (n = 0; n <= 9; n++)
-printf("%d", n);
-printf("\n");
-return (0);
+	int num;
+
+	for (num = 0; num < 10; num++)
+		printf("%d", num);
+
+	printf("\n");
+
+	return (0);
 }

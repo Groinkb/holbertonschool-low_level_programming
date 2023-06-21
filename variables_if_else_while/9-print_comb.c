@@ -1,22 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
- * main- Entry point
- * @void: Null value
- * Description: Print numbers from 0 to 9 separated by comma and space
- * Return: Zero value
+ * main - Prints all possible combinations of single-digit numbers.
+ *
+ * Return: Always (Succes)
  */
 int main(void)
 {
-int n;
-for (n = '0'; n <= '9'; n++)
-{
-putchar(n);
-if (n != '9')
+	int num;
+
+	for (num = 0; num <= 9; num++)
 	{
-putchar(',');
-putchar(' ');
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
+
+		putchar(',');
+		putchar(' ');
 	}
-}
-putchar('\n');
-return (0);
+
+	putchar('\n');
+
+	return (0);
 }
