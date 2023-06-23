@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_diagonal - print diagonal
  * @n: int
@@ -10,8 +9,8 @@ void print_diagonal(int n)
 {
 	int a = 0;
 	int b;
-//si n plus grand que 0
-	if (n > 0) 
+
+	if (n > 0)
 	{
 		for (a = 0; a < n; a++)
 		{
@@ -25,7 +24,7 @@ void print_diagonal(int n)
 			_putchar('\n');
 		}
 	}
-	else
+	else  
 	{
 		_putchar('\n');
 	}
