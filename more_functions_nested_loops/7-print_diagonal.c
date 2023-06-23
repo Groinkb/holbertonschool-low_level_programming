@@ -1,8 +1,13 @@
 #include "main.h"
+
 /**
  * print_diagonal - print diagonal
  * @n: int
  * Return: multipe
+ * Variable a = 0
+ * variable b, if n bigger than  0
+ * for a = 0 and a lower than n, loop it
+ * 
  */
 
 void print_diagonal(int n)
@@ -24,7 +29,7 @@ void print_diagonal(int n)
 			_putchar('\n');
 		}
 	}
-	else  
+	else
 	{
 		_putchar('\n');
 	}
