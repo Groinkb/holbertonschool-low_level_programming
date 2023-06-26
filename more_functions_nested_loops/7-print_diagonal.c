@@ -5,8 +5,7 @@
  * @n: int
  * Return: multipe
  * Variable a = 0
- * variable b, if n bigger than  0
- * for a = 0 and a lower than n, loop it 
+ * variable b, if n bigger than  0 for a = 0 and a lower than n, loop it 
  */
 
 void print_diagonal(int n)
