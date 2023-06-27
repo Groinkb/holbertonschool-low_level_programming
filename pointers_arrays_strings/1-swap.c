@@ -8,8 +8,8 @@
  * Subtract the second value from the sum
  * Subtract the first value from the sum
 */
-{
-*a = *a + *b;
-*b = *a - *b;
-*a = *a - *b;
+void swap_int(int *a, int *b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
 }
