@@ -9,6 +9,7 @@
 int _strlen(char *s)
 {
 	char *ptr = s;
+
 	while (*ptr)
 		{
 			ptr++;
