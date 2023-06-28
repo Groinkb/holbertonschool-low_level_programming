@@ -2,7 +2,8 @@
 #include <stddef.h>
 
 /**
- * print_rev - Affiche une chaîne de caractères en ordre inverse, suivie d'une nouvelle ligne.
+ * print_rev - Affiche une chaîne de caractères en ordre inverse, 
+ *suivie d'une nouvelle ligne.
  * @s: Pointeur vers la chaîne de caractères.
  */
 void print_rev(char *s)
