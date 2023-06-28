@@ -6,12 +6,14 @@
  *
  * Return: The length of the string
  */
+
 int _strlen(char *s)
+
+char *ptr = s;
 {
-	char *ptr = s;
 	while (*ptr)
-		{
-			ptr++;
+	{
+		ptr++;
 		}
 	return (int)(ptr - s);
 }
