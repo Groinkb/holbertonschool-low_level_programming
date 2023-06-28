@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _puts - Affiche une chaîne de caractères suivie d'une nouvelle ligne sur stdout.
+ * _puts - Affiche une chaîne de caractères
+ * suivie d'une nouvelle ligne sur stdout.
  * @str: Chaîne de caractères à afficher.
  */
 void _puts(char *str)
