@@ -1,22 +1,18 @@
 #include "main.h"
 
 /**
- * _puts - une fonction qui affiche une chaîne de caractères,
- * suivie d'une nouvelle ligne, sur stdout.
- * @str: une chaîne de caractères avec une certaine longueur
- * Pointeur temporaire pour parcourir la chaîne
- * Parcours de la chaîne de caractères 
+ * _puts - Affiche une chaîne de caractères suivie d'une nouvelle ligne sur stdout.
+ * @str: Chaîne de caractères à afficher.
  */
 void _puts(char *str)
 {
-	char *ptr = str; 
+	char *ptr = str; /* Pointeur temporaire pour parcourir la chaîne */
 
-    
-    while (*ptr != '\0')
-    {
-        _putchar(*ptr);
-        ptr++;
-    }
+	while (*ptr != '\0')
+	{
+		_putchar(*ptr);
+		ptr++;
+	}
 
-    _putchar('\n');
+	_putchar('\n');
 }
