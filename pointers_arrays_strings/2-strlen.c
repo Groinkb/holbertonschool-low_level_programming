@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen - Retourne la longueur d'une chaîne de caractères.
- * @s: Pointeur vers la chaîne de caractères.
+ * _strlen - Returns the length of a string.
+ * @s: Pointer to the string.
  *
- * Return: La longueur de la chaîne de caractères.
+ * Return: The length of the string.
  */
 int _strlen(char *s)
 {
@@ -15,5 +15,5 @@ int _strlen(char *s)
 		ptr++;
 	}
 
-	return (int)(ptr - s);
+	return ((int)(ptr - s));
 }
