@@ -1,23 +1,17 @@
 #include "main.h"
 #include <stdio.h>
 
-/**
- * print_array - prints n elements of an array of integers,
- * followed by a new line.
- * @a: array to be printed
- * @n: number of elements to print
- */
-void print_array(int *a, int n)
+int main(void)
 {
-	int i;
+    int array[1] = { 98 };
 
-	if (n <= 0 || a == NULL)
-		return;
+    // Test with incorrect length: 0
+    printf("Testing print_array(array, 0):\n");
+    print_array(array, 0);
 
-	printf("%d", a[0]);
+    // Test with negative length: -1
+    printf("Testing print_array(array, -1):\n");
+    print_array(array, -1);
 
-	for (i = 1; i < n; i++)
-		printf(", %d", a[i]);
-
-	printf("\n");
+    return 0;
 }
