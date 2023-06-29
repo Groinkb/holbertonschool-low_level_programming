@@ -2,18 +2,21 @@
 #include <stdio.h>
 
 /**
- * print_array - Affiche n éléments d'un tableau d'entiers, suivi d'un saut de ligne.
- * @a: Le tableau à afficher.
- * @n: Le nombre d'éléments à afficher.
+ * print_array - prints n elements of an array of integers,
+ * followed by a new line.
+ * @a: array to be printed
+ * @n: number of elements to print
  */
 void print_array(int *a, int n)
 {
+	int i;
+
 	if (n <= 0 || a == NULL)
 		return;
 
 	printf("%d", a[0]);
 
-	for (int i = 1; i < n; i++)
+	for (i = 1; i < n; i++)
 		printf(", %d", a[i]);
 
 	printf("\n");
