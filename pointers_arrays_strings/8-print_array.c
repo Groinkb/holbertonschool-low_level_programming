@@ -1,17 +1,24 @@
 #include "main.h"
 #include <stdio.h>
 
-int main(void)
+/**
+ * print_array - Prints n elements of an array ofnaintegrer
+ * @a: Array to be printed.
+ * @n: Number of elements to print.
+ */
+void print_array(int *a, int n)
 {
-    int array[1] = { 98 };
+	int i;
 
-    // Test with incorrect length: 0
-    printf("Testing print_array(array, 0):\n");
-    print_array(array, 0);
+	if (n <= 0 || a == NULL)
+		return;
 
-    // Test with negative length: -1
-    printf("Testing print_array(array, -1):\n");
-    print_array(array, -1);
+	printf("%d", a[0]);
 
-    return 0;
+	for (i = 1; i < n; i++)
+	{
+		printf(", %d", a[i]);
+	}
+
+	printf("\n");
 }
