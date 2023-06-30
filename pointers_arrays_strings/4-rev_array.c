@@ -13,6 +13,6 @@ void reverse_array(int *a, int n)
 	{
 		tempVar = a[start];
 		a[start] = a[end];
-		a[end] = tempVar
+		a[end] = tempVar;
 	}
 }
