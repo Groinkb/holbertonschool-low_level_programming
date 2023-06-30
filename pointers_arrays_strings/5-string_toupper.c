@@ -1,29 +1,23 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
- * rev_string - Reverses a string.
- * @s: The string to be reversed.
+ * string_toupper - Convertit toutes les lettres minuscules en majuscules.
+ * @str: Chaîne de caractères à convertir.
+ *
+ * Return: Pointeur vers la chaîne de caractères convertie.
  */
-void rev_string(char *s)
+char *string_toupper(char *str)
 {
-	int length, index;
-	char *begin, *end, character;
+	int count = 0;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-
-	begin = s;
-	end = s + length - 1;
-
-	for (index = 0; index < length / 2; index++)
+	while (str[count] != '\0')
 	{
-		character = *end;
-		*end = *begin;
-		*begin = character;
-
-		begin++;
-		end--;
+		if (str[count] >= 'a' && str[count] <= 'z')
+		{
+			str[count] = str[count] - 32;
+		}
+		count++;
 	}
+
+	return (str);
 }
