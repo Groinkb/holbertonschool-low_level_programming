@@ -1,18 +1,23 @@
 #include "main.h"
 
 /**
- * reverse_array - Reverse the content of an array of integers
- * @a: Pointer to the array
- * @n: Number of elements in the array
+ * string_toupper - Convertit toutes les lettres minuscules en majuscules.
+ * @str: Chaîne de caractères à convertir.
+ *
+ * Return: Pointeur vers la chaîne de caractères convertie.
  */
-void reverse_array(int *a, int n)
+char *string_toupper(char *str)
 {
-	int tempVar, start, end;
+	int count = 0;
 
-	for (start = 0, end = n - 1; start < end; start++, end--)
+	while (str[count] != '\0')
 	{
-		tempVar = a[start];
-		a[start] = a[end];
-		a[end] = tempVar;
+		if (str[count] >= 'a' && str[count] <= 'z')
+		{
+			str[count] -= 32;
+		}
+		count++;
 	}
+
+	return (str);
 }
