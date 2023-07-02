@@ -5,7 +5,7 @@
  * @s: Pointer to the string to search.
  * @accept: Pointer to the string containing the accepted characters.
  *
- * Return: Length of the initial segment.
+ * Return: Length of the initionly of bytes from accept.
  */
 unsigned int _strspn(char *s, char *accept)
 {
@@ -29,5 +29,5 @@ unsigned int _strspn(char *s, char *accept)
 		s++;
 	}
 
-	return (length)
+	return (length);
 }
