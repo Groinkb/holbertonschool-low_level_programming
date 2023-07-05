@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
- * factorial - Calcule le factoriel d'un nombre donné
- * @n: Le nombre pour lequel calculer le factoriel
- *
- * Return: Le factoriel de n, ou -1 si n est négatif
+ * factorial - Returns the factorial of a given number
+ * @n: The number to calculate the factorial of
+ * No LOOP
+ * Return: Factorial of n, or -1 if n is negative
+ * int = number without coma
  */
+
 int factorial(int n)
 {
 	if (n == 0)
