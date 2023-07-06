@@ -5,7 +5,7 @@
  * @n: The number to calculate the square root of
  * @i: The current number to check for square root
  *
- * Return: The natural square root of n, or -1 if it does not have one
+ * Return: The natural square root of n, or -1 if it does not have onee
  */
 int sqrt_helper(int n, int i)
 {
