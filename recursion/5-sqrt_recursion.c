@@ -1,23 +1,22 @@
-#include "main.h"
-
+#include <stdio.h>
 /**
- * sqrt_helper - Recursive helper function to calculate the square root
- * @n: The number to calculate the square root of
- * @i: The current number to check for square root
- *
- * Return: The natural square root of n, or -1 if it does not have onee
+ * checker - checks the input number from n to the base
+ * @n: number is squared and compared against base
+ * @base: base number to check
+ * Return: natural square root of number base
+ * * _sqrt_recursion - return the natural square root of a number n.
+ * @n: number to check for square roots.
+ * Return: the natural square root of number n
  */
-int sqrt_helper(int n, int i)
+int checker(int n, int base)
 {
-    if (n < 0)
-        return (-1);
-    if (n == 0 || n == 1)
-        return (n);
-
-    if (i * i > n)
-        return (-1);
-    if (i * i == n)
-        return (i);
-
-    return (sqrt_helper(n, i + 1));
+	if (n * n == base)
+		return (n);
+	if (n * n > base)
+		return (-1);
+	return (checker(n + 1, base));
+}
+int _sqrt_recursion(int n)
+{
+	return (checker(1, n));
 }
