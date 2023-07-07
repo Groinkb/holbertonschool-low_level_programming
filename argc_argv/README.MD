@@ -1,2 +1,1 @@
-this readme is talking about argc
-..
+This readme is not empty. And he's talking about argc.
