@@ -3,7 +3,7 @@
 /**
  * _strdup - duplicates a string into newly allocated array
  * @str: string to duplicate the string
- * Return: pointer to new string, or NULL if str is NULL 
+ * Return: pointer to new string, or NULL if str is NULL
  * or if memory allocation fails
  */
 char *_strdup(char *str)
