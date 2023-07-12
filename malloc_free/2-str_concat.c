@@ -1,102 +1,39 @@
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
 
 /**
- * str_concat - concatenates two strings
+ * str_concat - Concatenates two strings.
+ * @s1: The first string.
+ * @s2: The second string.
  *
- * @s1: first string
- * @s2: second string to concatenate to the end of the first string
- *
- * Return: pointer to the newly allocated concatenated string, or NULL if allocation fails
+ * Return: On success, returns a pointer to the concatenated string.
+ *         On failure or if s1 or s2 is NULL, returns NULL.
  */
 char *str_concat(char *s1, char *s2)
 {
-    char *concatenated = NULL;
+	char *concat_str;
+	int index, concat_index = 0, len = 0;
 
-    if (s1 == NULL)
-        s1 = "";
-    if (s2 == NULL)
-        s2 = "";
+	if (s1 == NULL)
+		s1 = "";
 
-    unsigned int size1 = get_string_length(s1);
-    unsigned int size2 = get_string_length(s2);
+	if (s2 == NULL)
+		s2 = "";
 
-    concatenated = allocate_memory(size1, size2);
-    if (concatenated == NULL)
-        return NULL;
+	for (index = 0; s1[index] || s2[index]; index++)
+		len++;
 
-    copy_string(concatenated, s1);
-    append_string(concatenated, s2);
+	concat_str = malloc(sizeof(char) * (len));
 
-    return concatenated;
-}
+	if (concat_str == NULL)
+		return (NULL);
 
-/**
- * get_string_length - calculates the length of a string
- *
- * @str: input string
- *
- * Return: length of the string
- */
-unsigned int get_string_length(const char *str)
-{
-    unsigned int length = 0;
+	for (index = 0; s1[index]; index++)
+		concat_str[concat_index++] = s1[index];
 
-    while (str[length] != '\0')
-        length++;
+	for (index = 0; s2[index]; index++)
+		concat_str[concat_index++] = s2[index];
 
-    return length;
-}
+	concat_str[concat_index] = '\0';
 
-/**
- * allocate_memory - allocates memory for the concatenated string
- *
- * @size1: length of the first string
- * @size2: length of the second string
- *
- * Return: pointer to the allocated memory
- */
-char *allocate_memory(unsigned int size1, unsigned int size2)
-{
-    char *allocated = malloc(sizeof(char) * (size1 + size2 + 1));
-
-    return allocated;
-}
-
-/**
- * copy_string - copies the contents of one string to another
- *
- * @dest: destination string
- * @src: source string
- */
-void copy_string(char *dest, const char *src)
-{
-    while (*src != '\0')
-    {
-        *dest = *src;
-        dest++;
-        src++;
-    }
-    *dest = '\0';
-}
-
-/**
- * append_string - appends the contents of one string to another
- *
- * @dest: destination string
- * @src: source string
- */
-void append_string(char *dest, const char *src)
-{
-    while (*dest != '\0')
-        dest++;
-
-    while (*src != '\0')
-    {
-        *dest = *src;
-        dest++;
-        src++;
-    }
-    *dest = '\0';
+	return (concat_str);
 }
