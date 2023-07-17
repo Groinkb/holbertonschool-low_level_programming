@@ -2,25 +2,24 @@
 #define DOG_H
 
 /**
- * struct dog - structure 
- * @name: name of  the dog
- * @age: age of the  dog
- * @owner: owner of  the dog
+ * struct dog - structure
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  *
- * Description: dog with it name, it age, and it owner's name.
+ * Description: dog with its name, its age, and its owner's name.
  */
 
-typedef struct dog dog_t;
+typedef struct dog
+{
+    char *owner;
+    float age;
+    char *name;
+} dog_t;
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
+
 #endif
-
-
-struct dog
-{
-    char *owner;
-    float age;
-    char  *name;
-};
