@@ -7,7 +7,7 @@
  * @age: age of the dog
  * @owner: owner of the dog
  *
- * Description: dog with its name, its age, and its owner's name.
+ * Description: dogo with its name, its age, and its owner's name.
  */
 
 typedef struct dog
