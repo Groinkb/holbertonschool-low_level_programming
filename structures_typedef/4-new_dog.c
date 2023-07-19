@@ -9,7 +9,7 @@
  * @age: Age of the dogs
  * @owner: Owner of the dog
  *
- * Return: Pointer to a new dog_t structure
+ * Return: Pointer to a new dog_t structure. Variable
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
