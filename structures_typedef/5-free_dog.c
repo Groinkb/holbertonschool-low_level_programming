@@ -3,18 +3,15 @@
 #include "dog.h"
 
 /**
- * free_dog - a function that frees the dogo
- * @d : a pointer to dog_t data
- * return : Null or free the memory
-*/
-
+ * free_dog - Frees memory allocated for a dog_t structure
+ * @d: Pointer to dog_t structure
+ */
 void free_dog(dog_t *d)
 {
-	if (d==NULL)
-		return NULL;
+	if (d == NULL)
+		return;
 
 	free(d->owner);
 	free(d->name);
 	free(d);
-
 }
