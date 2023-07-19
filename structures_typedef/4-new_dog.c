@@ -6,8 +6,8 @@
 /**
  * new_dog - Create a new dog_t structure
  * @name: Name of the dog
- * @age: Age of the dog
- * @owner: Owner of the dogo
+ * @age: Age of the dogs
+ * @owner: Owner of the dog
  *
  * Return: Pointer to a new dog_t structure
  */
