@@ -3,14 +3,21 @@
 #include <stdbool.h>
 #include "variadic_functions.h"
 
+/* Définition du type print_fn_t */
+typedef struct print_fn
+{
+    char type;
+    void (*fn)(va_list);
+} print_fn_t;
+
 /**
  * print_char - Print a char.
  *
- * @valist: va_list with the argumentss
+ * @valist: va_list with the arguments.
  */
 void print_char(va_list valist)
 {
-	printf("%c", va_arg(valist, int));
+    printf("%c", va_arg(valist, int));
 }
 
 /**
@@ -20,7 +27,7 @@ void print_char(va_list valist)
  */
 void print_integer(va_list valist)
 {
-	printf("%i", va_arg(valist, int));
+    printf("%i", va_arg(valist, int));
 }
 
 /**
@@ -30,7 +37,7 @@ void print_integer(va_list valist)
  */
 void print_float(va_list valist)
 {
-	printf("%f", va_arg(valist, double));
+    printf("%f", va_arg(valist, double));
 }
 
 /**
@@ -40,12 +47,12 @@ void print_float(va_list valist)
  */
 void print_string(va_list valist)
 {
-	char *string = va_arg(valist, char *);
+    char *string = va_arg(valist, char *);
 
-	if (string == NULL)
-		string = "(nil)";
+    if (string == NULL)
+        string = "(nil)";
 
-	printf("%s", string);
+    printf("%s", string);
 }
 
 /**
@@ -55,37 +62,37 @@ void print_string(va_list valist)
  */
 void print_all(const char * const format, ...)
 {
-	va_list valist;
-	int i = 0;
-	char *separator = "";
+    va_list valist;
+    int i = 0;
+    char *separator = "";
 
-	print_fn_t print_fn[] = {
-		{'c', print_char},
-		{'i', print_integer},
-		{'f', print_float},
-		{'s', print_string},
-		{0, NULL}
-	};
+    print_fn_t print_fn[] = {
+        {'c', print_char},
+        {'i', print_integer},
+        {'f', print_float},
+        {'s', print_string},
+        {0, NULL}
+    };
 
-	va_start(valist, format);
+    va_start(valist, format);
 
-	while (format != NULL && format[i] != '\0')
-	{
-		int j = 0;
-		while (print_fn[j].type != 0)
-		{
-			if (format[i] == print_fn[j].type)
-			{
-				printf("%s", separator);
-				print_fn[j].fn(valist);
-				separator = ", ";
-				break;
-			}
-			j++;
-		}
-		i++;
-	}
+    while (format != NULL && format[i] != '\0')
+    {
+        int j = 0;
+        while (print_fn[j].type != 0)
+        {
+            if (format[i] == print_fn[j].type)
+            {
+                printf("%s", separator);
+                print_fn[j].fn(valist);
+                separator = ", ";
+                break;
+            }
+            j++;
+        }
+        i++;
+    }
 
-	printf("\n");
-	va_end(valist);
+    printf("\n");
+    va_end(valist);
 }
