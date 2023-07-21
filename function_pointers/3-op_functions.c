@@ -48,7 +48,7 @@ int op_sub(int a, int b)
 
 
 /**
- * op_add - adds two integers
+ * op_add - adds two integerss
  * @a: first integer
  * @b: second integer
  * Return: sum of a and b
