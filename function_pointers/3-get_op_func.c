@@ -3,41 +3,29 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - Selects the correct function to perform the operation.
- *
- * @s: Operator passed as an argument to the program.
- *
- * Return: Pointer to the function that corresponds to the operator given as a
- * parameters.
+ * get_op_func - selects the correct function to perform the operation
+ * @s: operator passed as argument to the program
+ * Return: pointer to the function that corresponds to the operator given as a
+ * parameter
  */
 int (*get_op_func(char *s))(int, int)
 {
-	int (*func)(int, int);
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-	if (s == NULL)
-		return (NULL);
-
-	switch (*s)
+	while (ops[i].op != NULL)
 	{
-	case '+':
-		func = op_add;
-		break;
-	case '-':
-		func = op_sub;
-		break;
-	case '*':
-		func = op_mul;
-		break;
-	case '/':
-		func = op_div;
-		break;
-	case '%':
-		func = op_mod;
-		break;
-	default:
-		printf("Error\n");
-		exit(99);
+		if (*s == *(ops[i].op) && *(s + 1) == '\0')
+			return (ops[i].f);
+		i++;
 	}
-
-	return (func);
+	printf("Error\n");
+	exit(99);
 }
