@@ -43,9 +43,9 @@ void print_string(va_list valist)
 	char *string = va_arg(valist, char *);
 
 	if (string == NULL)
-		printf("(nil)");
-	else
-		printf("%s", string);
+		string = "(nil)";
+
+	printf("%s", string);
 }
 
 /**
@@ -59,32 +59,30 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *separator = "";
 
+	print_fn_t print_fn[] = {
+		{'c', print_char},
+		{'i', print_integer},
+		{'f', print_float},
+		{'s', print_string},
+		{0, NULL}
+	};
+
 	va_start(valist, format);
 
 	while (format != NULL && format[i] != '\0')
 	{
-		switch (format[i])
+		int j = 0;
+		while (print_fn[j].type != 0)
 		{
-			case 'c':
-				print_char(valist);
-				break;
-			case 'i':
-				print_integer(valist);
-				break;
-			case 'f':
-				print_float(valist);
-				break;
-			case 's':
-				print_string(valist);
-				break;
-			default:
+			if (format[i] == print_fn[j].type)
+			{
+				printf("%s", separator);
+				print_fn[j].fn(valist);
 				separator = ", ";
 				break;
+			}
+			j++;
 		}
-
-		if (format[i + 1] != '\0' && *separator != '\0')
-			printf("%s", separator);
-
 		i++;
 	}
 
