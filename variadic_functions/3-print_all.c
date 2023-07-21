@@ -6,7 +6,7 @@
 /**
  * print_char - Print a char.
  *
- * @valist: va_list with the arguments.
+ * @valist: va_list with the argumentss
  */
 void print_char(va_list valist)
 {
