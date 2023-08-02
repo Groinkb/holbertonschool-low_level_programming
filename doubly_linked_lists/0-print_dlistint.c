@@ -17,5 +17,5 @@ size_t print_dlistint(const dlistint_t *h)
 		co++;
 	}
 
-	return co;
+	return (co);
 }
