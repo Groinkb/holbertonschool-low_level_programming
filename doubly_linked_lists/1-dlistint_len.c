@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include "lists.h"
+
 
 /**
  * dlistint_len - function that returns the number of elements in a,
