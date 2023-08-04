@@ -1,37 +1,37 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * binary_to_uint - converts a binary number to unsigned int
- * @b: string containing the binary number
- *
- * Return: the converted number
+ * binary_to_uint - Entry Point
+ * @b: const char
+ * Return: 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int dec_val = 0;
-
-	if (!b)
+	if (b == NULL)
 		return 0;
 
-	// Trouver la longueur de la chaîne binaire
+	unsigned int res = 0;
+
+
 	int length = 0;
 	while (b[length])
 		length++;
 
-	// Parcourir la chaîne binaire de droite à gauche
-	for (int i = length - 1; i >= 0; i--)
+
+	for (int i = 0; i < length; i++)
 	{
-		if (b[i] == '1')
+		if (b[i] == '0' || b[i] == '1')
 		{
-			// Si le bit est à 1, ajouter 2^position à la valeur décimale
-			dec_val += (1 << (length - 1 - i));
+
+			res = (res << 1) | (b[i] - '0');
 		}
-		else if (b[i] != '0')
+		else
 		{
-			// Si un caractère différent de '0' ou '1' est trouvé, retourner 0 (erreur)
+
 			return 0;
 		}
 	}
 
-	return dec_val;
+	return res;
 }
