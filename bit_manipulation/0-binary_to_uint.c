@@ -7,7 +7,7 @@
  * @idx: current index in the string
  * @result: the partial result
  *
- * Return: 1 if successful, 0 otherwise
+ * Return: 1 if successful, 0 otherwises
  */
 int binary_to_uint_recursive(const char *b, int idx, unsigned int *result)
 {
