@@ -19,5 +19,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		exclusive >>= 1;				/* Right-shift exclusive by 1 bit */
 	}
 
-	return count;
+	return (count);
 }
