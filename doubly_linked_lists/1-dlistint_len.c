@@ -1,21 +1,20 @@
-
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
- * dlistint_len - function that returns the number of elements in a,
- * linked dlistint_t list. TEST
- * @h: pointer to the head of the listd
+ * dlistint_len_recursive - function that returns the number of elements in a
+ * linked dlistint_t list using recursion.
+ * @h: pointer to the head of the list
  *
  * Return: number of elements
  */
 
-unsigned int dlistint_len(const dlistint_t *h)
+size_t dlistint_len_recursive(const dlistint_t *h)
 {
-	unsigned int count = 0;
+	if (h == NULL)
+		return 0;
 
-	while (h != NULL)
-	{
-		count++;
-		h = h->next;
-	}
-	return count;
+	return 1 + dlistint_len_recursive(h->next);
 }
