@@ -15,8 +15,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (exclusive > 0)
 	{
-		count += exclusive & 1; // Check the rightmost bit of exclusive
-		exclusive >>= 1;				// Right-shift exclusive by 1 bit
+		count += exclusive & 1; /* Check the rightmost bit of exclusive */
+		exclusive >>= 1;				/* Right-shift exclusive by 1 bit */
 	}
 
 	return count;
