@@ -1,37 +1,42 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * binary_to_uint - Entry Point
- * @b: const char
- * Return: 0
+ * binary_to_uint_recursive - converts a binary number to unsigned int (helper function)
+ * @b: string containing the binary number
+ * @idx: current index in the string
+ * @result: the partial result
+ *
+ * Return: 1 if successful, 0 otherwise
+ */
+int binary_to_uint_recursive(const char *b, int idx, unsigned int *result)
+{
+	if (b[idx] == '\0')
+		return 1;
+
+	if (b[idx] == '0' || b[idx] == '1')
+	{
+		*result = (*result << 1) | (b[idx] - '0');
+		return binary_to_uint_recursive(b, idx + 1, result);
+	}
+
+	return 0;
+}
+
+/**
+ * binary_to_uint - converts a binary number to unsigned int
+ * @b: string containing the binary number
+ *
+ * Return: the converted number
  */
 unsigned int binary_to_uint(const char *b)
 {
-	if (b == NULL)
+	unsigned int dec_val = 0;
+
+	if (!b)
 		return 0;
 
-	unsigned int res = 0;
+	if (binary_to_uint_recursive(b, 0, &dec_val))
+		return dec_val;
 
-
-	int length = 0;
-	while (b[length])
-		length++;
-
-
-	for (int i = 0; i < length; i++)
-	{
-		if (b[i] == '0' || b[i] == '1')
-		{
-
-			res = (res << 1) | (b[i] - '0');
-		}
-		else
-		{
-
-			return 0;
-		}
-	}
-
-	return res;
+	return 0;
 }
