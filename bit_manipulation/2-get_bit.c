@@ -14,9 +14,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (index > 63)
 		return (-1);
 
-	mask = 1UL << index;
+	mask = 1UL << index; /* Create a mask with a 1 at the specified index */
 
-	if (n & mask)
+	if (n & mask) /* Check if the bit at the index is 1 */
+		return (1);
 	else
 		return (0);
 }
