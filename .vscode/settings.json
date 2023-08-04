@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "main.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "lists.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
