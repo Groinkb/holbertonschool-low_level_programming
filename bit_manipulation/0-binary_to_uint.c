@@ -9,7 +9,7 @@
  *
  * Return: 1 if successful, 0 otherwise
  */
-int binary_to_uint_recursive(const char *b, int idx, unsigned int *result)
+int (binary_to_uint_recursive(const char *b, int idx, unsigned int *result))
 {
 	if (b[idx] == '\0')
 		return (1);
