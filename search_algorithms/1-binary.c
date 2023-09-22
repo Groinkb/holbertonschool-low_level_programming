@@ -1,7 +1,8 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Recherche un élément dans un tableau trié en utilisant la recherche binaire.
+ * binary_search - Recherche un élément dans un tableau trié en utilisant
+ *                 la recherche binaire.
  * @array: Pointeur vers le premier élément du tableau à rechercher.
  * @size: Nombre d'éléments dans le tableau.
  * @value: Valeur à rechercher.
